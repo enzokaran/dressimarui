@@ -14,12 +14,12 @@
 // ------------------------------------------------------------
 
 export const GALERIA = [
-  { url: '/fotos/foto1.jpg',  alt: 'Foto 1 da loja' },
-  { url: '/fotos/foto2.jpg',  alt: 'Foto 2 da loja' },
-  { url: '/fotos/foto3.jpg',  alt: 'Foto 3 da loja' },
-  { url: '/fotos/foto4.jpg',  alt: 'Foto 4 da loja' },
-  { url: '/fotos/foto5.jpg',  alt: 'Foto 5 da loja' },
-  { url: '/fotos/foto6.jpg',  alt: 'Foto 6 da loja' },
+  { url: '/fotos/imagem1.png',  alt: 'Foto 1 da loja' },
+  { url: '/fotos/imagem2.png',  alt: 'Foto 2 da loja' },
+  { url: '/fotos/imagem3.png',  alt: 'Foto 3 da loja' },
+  { url: '/fotos/imagem4.png',  alt: 'Foto 4 da loja' },
+  { url: '/fotos/imagem5.png',  alt: 'Foto 5 da loja' },
+  { url: '/fotos/imagem6.png',  alt: 'Foto 6 da loja' },
 ];
 
 
