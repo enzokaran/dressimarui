@@ -40,23 +40,23 @@ export const GALERIA = [
 
 export const INSTAGRAM_POSTS = [
   {
-    foto: '/fotos/insta1.jpg',
+    foto: '/fotos/insta1.png',
     link: 'https://www.instagram.com/p/DY4kDBZAPOS/?img_index=1',
   },
   {
-    foto: '/fotos/insta2.jpg',
+    foto: '/fotos/insta2.png',
     link: 'https://www.instagram.com/p/DYmUYxCgA1i/?img_index=1',
   },
   {
-    foto: '/fotos/insta3.jpg',
+    foto: '/fotos/insta3.png',
     link: 'https://www.instagram.com/p/DY0K95Dj_Gn/?img_index=1',
   },
   {
-    foto: '/fotos/insta4.jpg',
+    foto: '/fotos/insta4.png',
     link: 'https://www.instagram.com/p/DX7brrGD1_5/?img_index=1',
   },
   {
-    foto: '/fotos/insta5.jpg',
+    foto: '/fotos/insta5.png',
     link: 'https://www.instagram.com/p/DWhR8fIj2RI/?img_index=1',
   },
   {
