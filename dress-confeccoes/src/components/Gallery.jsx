@@ -2,13 +2,12 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
-import { useSite } from '../context/SiteContext';
+import { GALERIA } from '../config';
 
 export default function Gallery() {
   const [ref, inView] = useInView({ threshold: 0.1 });
   const [lightbox, setLightbox] = useState(null);
-  const { data } = useSite();
-  const photos = data.gallery;
+  const photos = GALERIA;
 
   const prev = () => setLightbox(i => (i - 1 + photos.length) % photos.length);
   const next = () => setLightbox(i => (i + 1) % photos.length);
@@ -31,11 +30,10 @@ export default function Gallery() {
             </h2>
           </motion.div>
 
-          {/* Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {photos.map((photo, i) => (
               <motion.div
-                key={photo.id}
+                key={i}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.6, delay: i * 0.08 }}
@@ -51,20 +49,14 @@ export default function Gallery() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-royal-950/0 group-hover:bg-royal-950/40 transition-all duration-300 flex items-center justify-center">
-                  <ZoomIn
-                    size={32}
-                    className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-lg"
-                  />
+                  <ZoomIn size={32} className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-lg" />
                 </div>
-                {/* Gold corner */}
-                <div className="absolute top-0 left-0 w-0 h-0 border-t-0 border-l-0 group-hover:border-t-8 group-hover:border-l-8 border-gold-400 transition-all duration-300" />
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Lightbox */}
       <AnimatePresence>
         {lightbox !== null && (
           <motion.div
@@ -74,20 +66,12 @@ export default function Gallery() {
             onClick={() => setLightbox(null)}
             className="fixed inset-0 z-[100] flex items-center justify-center lightbox-backdrop bg-royal-950/90"
           >
-            <button
-              onClick={(e) => { e.stopPropagation(); setLightbox(null); }}
-              className="absolute top-6 right-6 text-white/70 hover:text-white p-2 z-10"
-            >
+            <button onClick={(e) => { e.stopPropagation(); setLightbox(null); }} className="absolute top-6 right-6 text-white/70 hover:text-white p-2 z-10">
               <X size={28} />
             </button>
-
-            <button
-              onClick={(e) => { e.stopPropagation(); prev(); }}
-              className="absolute left-4 md:left-8 text-white/70 hover:text-gold-400 p-2 z-10 transition-colors"
-            >
+            <button onClick={(e) => { e.stopPropagation(); prev(); }} className="absolute left-4 md:left-8 text-white/70 hover:text-gold-400 p-2 z-10 transition-colors">
               <ChevronLeft size={36} />
             </button>
-
             <motion.div
               key={lightbox}
               initial={{ opacity: 0, scale: 0.9 }}
@@ -96,21 +80,11 @@ export default function Gallery() {
               onClick={e => e.stopPropagation()}
               className="max-w-3xl max-h-[80vh] mx-16"
             >
-              <img
-                src={photos[lightbox].url}
-                alt={photos[lightbox].alt}
-                className="max-w-full max-h-[80vh] object-contain shadow-2xl"
-              />
+              <img src={photos[lightbox].url} alt={photos[lightbox].alt} className="max-w-full max-h-[80vh] object-contain shadow-2xl" />
             </motion.div>
-
-            <button
-              onClick={(e) => { e.stopPropagation(); next(); }}
-              className="absolute right-4 md:right-8 text-white/70 hover:text-gold-400 p-2 z-10 transition-colors"
-            >
+            <button onClick={(e) => { e.stopPropagation(); next(); }} className="absolute right-4 md:right-8 text-white/70 hover:text-gold-400 p-2 z-10 transition-colors">
               <ChevronRight size={36} />
             </button>
-
-            {/* Counter */}
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/50 text-sm font-body tracking-widest">
               {lightbox + 1} / {photos.length}
             </div>
