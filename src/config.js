@@ -11,9 +11,6 @@
 //
 //  Exemplo: se você colocou "vitrine.jpg" na pasta public/fotos/
 //  escreva:  url: '/fotos/vitrine.jpg'
-//
-//  Você pode ter quantas fotos quiser — só copiar e colar
-//  mais linhas seguindo o mesmo formato { url: '...', alt: '...' }
 // ------------------------------------------------------------
 
 export const GALERIA = [
@@ -28,14 +25,10 @@ export const GALERIA = [
 
 // ------------------------------------------------------------
 //  INSTAGRAM — POSTS EM DESTAQUE
+//  Coloque as fotos na pasta: public/fotos/
 //  Cada item precisa de:
-//    foto: caminho da imagem (mesma lógica acima, pasta public/fotos/)
+//    foto: caminho da imagem
 //    link: link direto do post no Instagram
-//
-//  Como pegar o link do post:
-//    Abra o post no Instagram → clique nos 3 pontinhos → "Copiar link"
-//
-//  Você pode ter quantos posts quiser
 // ------------------------------------------------------------
 
 export const INSTAGRAM_POSTS = [
