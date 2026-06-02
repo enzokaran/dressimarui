@@ -25,7 +25,7 @@ export default function About() {
           >
             <div className="relative overflow-hidden aspect-[4/5]">
               <img
-                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80"
+                src="/fotos/logo.png"
                 alt="Interior da Dress Confecções"
                 className="w-full h-full object-cover"
               />
